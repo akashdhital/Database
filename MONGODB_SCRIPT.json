@@ -1,0 +1,418 @@
+
+------------------------------CET341-ADT-ASSIGNMENT----------------------------------------
+
+---------------------------------MONGODB SCRIPT--------------------------------------------
+
+
+
+-----creating the database---------
+>use ADT
+>switched ADT
+
+
+
+-----creating collections-------
+>db.createCollection("BRANCH")
+{ "ok" : 1 }
+> db.createCollection("PROPERTY")
+{ "ok" : 1 }
+> db.createCollection("ADVERTISEMENT")
+{ "ok" : 1 }
+
+
+-------------------------------------------------------------------------------------------
+
+******inserting documents into the BRANCH collections*******
+
+db.BRANCH.insert({
+"BRANCH_NO" : "B001", 
+    "ADDRESS" : {
+        "STREET_NO" : "00001", 
+        "STREET" : "JYATHA", 
+        "CITY" : "KATHMANDU", 
+        "PROVINCE" : "BAGMATI", 
+        "POSTAL_CODE" : "44600"
+    }, 
+    "BRANCH_MANAGER" : "SANDESH", 
+    "STAFF" : [
+        {
+            "STAFF_NO" : "S001", 
+            "LAST_NAME" : "SHARMA", 
+            "FIRST_NAME" : "SITA", 
+            "MIDDLE_NAME" : "DEVI", 
+            "SEX" : "F", 
+            "SALARY" : 5000.0
+        }, 
+        {
+            "STAFF_NO" : "S008", 
+            "LAST_NAME" : "DHAKAL", 
+            "FIRST_NAME" : "ANISHA", 
+            "MIDDLE_NAME" : "KUMARI", 
+            "SEX" : "F", 
+            "SALARY" : 5000.0
+        }
+    ]
+
+})
+
+-------------------------------------------------------------------------------------------
+
+db.BRANCH.insert({
+ "BRANCH_NO" : "B002", 
+    "ADDRESS" : {
+        "STREET_NO" : "00002", 
+        "STREET" : "RAMSHAH", 
+        "CITY" : "GORKHA", 
+        "PROVINCE" : "GANDAKI", 
+        "POSTAL_CODE" : "ABC111"
+    }, 
+    "BRANCH_MANAGER" : "BIBEK", 
+    "STAFF" : [
+        {
+            "STAFF_NO" : "S002", 
+            "LAST_NAME" : "POUDEL", 
+            "FIRST_NAME" : "SUJAN", 
+            "MIDDLE_NAME" : "NA", 
+            "SEX" : "M", 
+            "SALARY" : 7000.0
+        }, 
+        {
+            "STAFF_NO" : "S005", 
+            "LAST_NAME" : "THAPA", 
+            "FIRST_NAME" : "ABIRAL", 
+            "MIDDLE_NAME" : "BAHADUR", 
+            "SEX" : "M", 
+            "SALARY" : 200000.0
+        }, 
+        {
+            "STAFF_NO" : "S009", 
+            "LAST_NAME" : "ARYAL", 
+            "FIRST_NAME" : "PRASHANT", 
+            "MIDDLE_NAME" : "RAJ", 
+            "SEX" : "M", 
+            "SALARY" : 200000.0
+        }
+    ]
+})
+
+--------------------------------------------------------------------------------------------
+
+db.BRANCH.insert({
+ "BRANCH_NO" : "B003", 
+    "ADDRESS" : {
+        "STREET_NO" : "00003", 
+        "STREET" : "HARIPUR", 
+        "CITY" : "SARLAHI", 
+        "PROVINCE" : "MADHESH", 
+        "POSTAL_CODE" : "45800"
+    }, 
+    "BRANCH_MANAGER" : "ANCHALA", 
+    "STAFF" : [
+        {
+            "STAFF_NO" : "S003", 
+            "LAST_NAME" : "DONG", 
+            "FIRST_NAME" : "LOK", 
+            "MIDDLE_NAME" : "BAHADUR", 
+            "SEX" : "M", 
+            "SALARY" : 100000.0
+        }, 
+        {
+            "STAFF_NO" : "S007", 
+            "LAST_NAME" : "SHRESTHA", 
+            "FIRST_NAME" : "MADAN", 
+            "MIDDLE_NAME" : "KRISHNA", 
+            "SEX" : "M", 
+            "SALARY" : 200000.0
+        },
+        {
+            "STAFF_NO" : "S010", 
+            "LAST_NAME" : "SHRESTHA", 
+            "FIRST_NAME" : "HARI", 
+            "MIDDLE_NAME" : "BAHADUR", 
+            "SEX" : "M", 
+            "SALARY" : 200000.0
+        }
+    ]
+
+})
+
+--------------------------------------------------------------------------------------------
+
+db.BRANCH.insert({
+ "BRANCH_NO" : "B004", 
+    "ADDRESS" : {
+        "STREET_NO" : "00004", 
+        "STREET" : "BIRENDRA", 
+        "CITY" : "JUMLA", 
+        "PROVINCE" : "KARNALI", 
+        "POSTAL_CODE" : "21200"
+    }, 
+    "BRANCH_MANAGER" : "ALEX", 
+    "STAFF" : [
+        {
+            "STAFF_NO" : "S011", 
+            "LAST_NAME" : "AMAGAI", 
+            "FIRST_NAME" : "SUNIL", 
+            "MIDDLE_NAME" : "PRASAD", 
+            "SEX" : "M", 
+            "SALARY" : 900000.0
+        }, 
+        {
+            "STAFF_NO" : "S012", 
+            "LAST_NAME" : "DANGOL", 
+            "FIRST_NAME" : "BALEN", 
+            "MIDDLE_NAME" : "BISHNU", 
+            "SEX" : "M", 
+            "SALARY" : 300000.0
+        },
+        {
+            "STAFF_NO" : "S013", 
+            "LAST_NAME" : "KC", 
+            "FIRST_NAME" : "ARJUN", 
+            "MIDDLE_NAME" : "NARSINGH", 
+            "SEX" : "M", 
+            "SALARY" : 400000.0
+        }
+    ]
+
+})
+
+-------------------------------------------------------------------------------------------
+
+******inserting documents into the PROPERTY collections*******
+
+ db.PROPERTY.insert({ 
+   "PROPERTY_NO" : "P001", 
+    "PROPERTY_TYPE" : "RESIDENTAL", 
+    "PROPERTY_OWNER" : {
+        "OWNER_NO" : "O001", 
+        "STREET_NO" : "S001", 
+        "STREET" : "JYATHA", 
+        "CITY" : "KATHMANDU", 
+        "PROVINCE" : "BAGMATI", 
+        "POSTAL_CODE" : "44600", 
+        "PRIVATE_OWNER" : {
+            "FIRSTNAME" : "SANDESH", 
+            "LASTNAME" : "PANTA"
+        }
+    }, 
+    "LEASE_AGREEMENT" : {
+        "LEASE_AGREEMENT_ID" : "LA01", 
+        "SIGNINING_DATE" : ISODate("2021-10-02T01:11:18.965+0000"), 
+        "STARTING_DATE" : ISODate("2021-10-02T01:11:18.965+0000"), 
+        "ENDING_DATE" : ISODate("2021-10-02T01:11:18.965+0000")
+    }, 
+    "TENANT" : {
+        "TENANT_NO" : "T001", 
+        "PRIVATE_TENANT" : {
+            "FIRSTNAME" : "SANDESH", 
+            "LASTNAME" : "PANTA"
+        }
+    }, 
+    "BRANCH_NO" : "B001"
+})
+
+--------------------------------------------------------------------------------------------
+
+db.PROPERTY.insert({ 
+   "PROPERTY_NO" : "P004", 
+    "PROPERTY_TYPE" : "RESIDENTAL", 
+    "PROPERTY_OWNER" : {
+        "OWNER_NO" : "O004", 
+        "STREET_NO" : "S004", 
+        "STREET" : "BIRENDRA", 
+        "CITY" : "JUMLA", 
+        "PROVINCE" : "KARNALI", 
+        "POSTAL_CODE" : "44601", 
+        "PRIVATE_OWNER" : {
+            "FIRSTNAME" : "GAURAV", 
+            "LASTNAME" : "KOIRALA"
+        }
+    }, 
+    "LEASE_AGREEMENT" : {
+        "LEASE_AGREEMENT_ID" : "LA04", 
+        "SIGNINING_DATE" : ISODate("2021-11-02T01:11:18.965+0000"), 
+        "STARTING_DATE" : ISODate("2021-11-02T01:11:18.965+0000"), 
+        "ENDING_DATE" : ISODate("2021-11-02T01:11:18.965+0000")
+    }, 
+    "TENANT" : {
+        "TENANT_NO" : "T004", 
+        "PRIVATE_TENANT" : {
+            "FIRSTNAME" : "GAURAV", 
+            "LASTNAME" : "KOIRALA"
+        }
+    }, 
+    "BRANCH_NO" : "B004"
+})
+
+--------------------------------------------------------------------------------------------
+
+db.PROPERTY.insert({ 
+    "PROPERTY_NO" : "P002", 
+    "PROPERTY_TYPE" : "COMMERCIAL", 
+    "PROPERTY_OWNER" : {
+        "OWNER_NO" : "O002", 
+        "STREET_NO" : "2020", 
+        "STREET" : "RAMSHAH", 
+        "CITY" : "GORKHA", 
+        "PROVINCE" : "GANDAKI", 
+        "POSTAL_CODE" : "ABC111", 
+        "BUISINESS_OWNER" : {
+            "BUSINESS_OWNER_NAME" : "TULEK"
+        }
+    }, 
+    "LEASE_AGREEMENT" : {
+        "LEASE_AGREEMENT_ID" : "LA02", 
+        "SIGNINING_DATE" : ISODate("2021-12-02T01:11:18.965+0000"), 
+        "STARTING_DATE" : ISODate("2021-12-02T01:11:18.965+0000"), 
+        "ENDING_DATE" : ISODate("2022-12-02T01:11:18.965+0000")
+    }, 
+    "TENANT" : {
+        "TENANT_NO" : "T002", 
+        "BUSINESS_TENANT" : {
+            "BUSINESS_NAME" : "DBL CARE"
+        }
+    }, 
+    "BRANCH_NO" : "B002"
+   
+})
+
+--------------------------------------------------------------------------------------------
+
+db.PROPERTY.insert({ 
+"PROPERTY_NO" : "P003", 
+    "PROPERTY_TYPE" : "INDUSTRIAL", 
+    "PROPERTY_OWNER" : {
+        "OWNER_NO" : "O003", 
+        "STREET_NO" : "S005", 
+        "STREET" : "JYATHA", 
+        "CITY" : "KATHMANDU", 
+        "PROVINCE" : "BAGMATI", 
+        "POSTAL_CODE" : "44600", 
+        "BUISINESS_OWNER" : {
+            "BUSINESS_OWNER_NAME" : "AKASH"
+        }
+    }, 
+    "LEASE_AGREEMENT" : {
+        "LEASE_AGREEMENT_ID" : "LA03", 
+        "SIGNINING_DATE" : ISODate("2021-10-02T01:11:18.965+0000"), 
+        "STARTING_DATE" : ISODate("2021-10-02T01:11:18.965+0000"), 
+        "ENDING_DATE" : ISODate("2022-10-02T01:11:18.965+0000")
+    }, 
+    "TENANT" : {
+        "TENANT_NO" : "T003", 
+        "BUSINESS_TENANT" : {
+            "BUSINESS_NAME" : "RG INDUSTRIES"
+        }
+    }, 
+    "BRANCH_NO" : "B003"
+})
+
+--------------------------------------------------------------------------------------------
+
+******inserting documents into the ADVERTISEMENT collections*******
+
+db.ADVERTISEMENT.insert({ 
+    "ADVERTISEMENT_NO" : "A001", 
+    "ADVERTISEMENT_DATE" : ISODate("2021-10-02T01:11:18.965+0000"), 
+    "ADVERTISEMENT_MEDIA" : {
+        "MEDIA_NAME" : [
+            "FACEBOOK", 
+            "TWITTER", 
+            "TELEGRAM", 
+            "INSTAGRAM"
+        ]
+    }
+    
+})
+
+--------------------------------------------------------------------------------------------
+
+db.ADVERTISEMENT.insert({ 
+    "ADVERTISEMENT_NO" : "A002", 
+    "ADVERTISEMENT_DATE" : ISODate("2021-12-02T01:11:18.965+0000"), 
+    "ADVERTISEMENT_MEDIA" : {
+        "MEDIA_NAME" : [
+            "FACEBOOK", 
+            "TWITTER", 
+            "TELEGRAM", 
+            "INSTAGRAM"
+        ]
+    }
+    
+})
+
+-------------------------------------------------------------------------------------------
+
+db.ADVERTISEMENT.insert({ 
+    "ADVERTISEMENT_NO" : "A003", 
+    "ADVERTISEMENT_DATE" : ISODate("2021-11-02T01:11:18.965+0000"), 
+    "ADVERTISEMENT_MEDIA" : {
+        "MEDIA_NAME" : [
+            "FACEBOOK", 
+            "TWITTER", 
+            "TELEGRAM", 
+            "INSTAGRAM"
+        ]
+    }
+    
+})
+
+-----------***********outer joins***********-------------
+
+db.BRANCH.aggregate([{
+$lookup:{
+        from:"PROPERTY",
+        localField:"BRANCH_NO",
+        foreignField:"BRANCH_NO",
+        as:"PROPERTY_INFO"     
+}
+},
+$unwind:{path:"$PROPERTY_INFO", preserveNullAndEmptyArrays: true }},
+    {
+        $project:{
+            "BRANCH_NO":1,
+            "BRANCH_MANAGER":1,
+            "CITY":"GORKHA",
+            "COMPANY":$PROPERTY_INFO.TENANT.BUSINESS_TENANT.BUSINESS_NAME"
+    }
+  }
+])
+-----------------------------------------------------------------------------------------
+
+
+------------------------
+------NESTED-----------
+----------------------------------
+db.PROPERTY.find({"LEASE_AGREEMENT.LEASE_AGREEMENT_ID":"LA01","TENANT.TENANT_NO":"T001",PROPERTY_OWNER.OWNER_ID}).pretty()
+-----------------------------------------------------------------------------------------
+
+
+----------------***********temporal feature***********---------
+
+db.ADVERTISEMENT.find({ ADVERTISEMENT_DATE : { $gt:ISODate("2020-10-02T01:11:18.965+0000"), 
+$lt:ISODate("2025-10-02T01:11:18.965+0000")}}).pretty()
+
+db.ADVERTISEMENT.aggregate([{$project:{year:{$year:"$ADVERTISEMENT_DATE"},
+month:{$month:"$ADVERTISEMENT_DATE"}}}]).pretty()
+
+
+
+
+---------------**********ROLLUP**********--------------
+
+db.BRANCH.aggregate( [
+
+   {
+         $unwind: "$STAFF" },
+   {
+      $group: {
+        _id: "$BRANCH_NO",
+        total_staff:{$sum:1},
+        TOTAL_SALARY: { $sum: "$STAFF.SALARY" }
+      }
+    }
+ ] ).pretty()
+
+
+__________________________________________________________________________________________
